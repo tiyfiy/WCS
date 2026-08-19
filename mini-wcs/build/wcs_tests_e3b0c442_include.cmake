@@ -1,0 +1,5 @@
+if(EXISTS "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/wcs_tests_e3b0c442_tests.cmake")
+  include("/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/wcs_tests_e3b0c442_tests.cmake")
+else()
+  add_test(wcs_tests_NOT_BUILT wcs_tests_NOT_BUILT)
+endif()

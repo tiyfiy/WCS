@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build",
+  "command": "/usr/bin/c++ -I/Users/timimaucec/PRO/CPP/WCS/mini-wcs/include -std=c++20 -arch arm64 -o CMakeFiles/wcs_domain.dir/src/ping.cpp.o -c /Users/timimaucec/PRO/CPP/WCS/mini-wcs/src/ping.cpp",
+  "file": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/src/ping.cpp",
+  "output": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/CMakeFiles/wcs_domain.dir/src/ping.cpp.o"
+},
+{
+  "directory": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build",
+  "command": "/usr/bin/c++ -I/Users/timimaucec/PRO/CPP/WCS/mini-wcs/include -isystem /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest/include -isystem /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest -std=c++20 -arch arm64 -o CMakeFiles/wcs_tests.dir/tests/test_ping.cpp.o -c /Users/timimaucec/PRO/CPP/WCS/mini-wcs/tests/test_ping.cpp",
+  "file": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/tests/test_ping.cpp",
+  "output": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/CMakeFiles/wcs_tests.dir/tests/test_ping.cpp.o"
+},
+{
+  "directory": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build",
+  "command": "/usr/bin/c++ -I/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googlemock/include -I/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googlemock -isystem /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest/include -isystem /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build",
+  "command": "/usr/bin/c++ -isystem /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googlemock/include -isystem /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googlemock -isystem /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest/include -isystem /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build",
+  "command": "/usr/bin/c++ -I/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest/include -I/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build",
+  "command": "/usr/bin/c++ -isystem /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest/include -isystem /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+}
+]

@@ -1,0 +1,15 @@
+# ninja log v7
+1	370	1787154975798986202	CMakeFiles/wcs_domain.dir/src/ping.cpp.o	e2175da3ba959404
+371	456	1787154976168740959	libwcs_domain.a	c1ac69005fd47dcd
+2	743	1787154975799431079	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	1994459c4856519b
+2	763	1787154975799634289	CMakeFiles/wcs_tests.dir/tests/test_ping.cpp.o	87f6f0e5d5c8edd3
+2	829	1787154975799943582	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o	60f613d75e137edd
+1	1020	1787154975799220495	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o	82524734cf641594
+1	1347	1787154975798634075	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	d8f6b82af6674642
+1347	1385	1787154977144963564	lib/libgtest.a	38aefa2c5f83310
+1385	1420	1787154977182900058	lib/libgmock.a	cfd1235c984bcb0d
+1385	1420	1787154977183061142	lib/libgtest_main.a	2fc6f460164925a8
+1420	1456	1787154977218028036	lib/libgmock_main.a	ed294e13748ec368
+1420	1811	1787154977605825264	wcs_tests	6e6fcb8bc3fb47fa
+1420	1811	1787154977605825264	wcs_tests_e3b0c442_tests.cmake	6e6fcb8bc3fb47fa
+1420	1811	1787154977605825264	/Users/timimaucec/PRO/CPP/WCS/mini-wcs/build/wcs_tests_e3b0c442_tests.cmake	6e6fcb8bc3fb47fa

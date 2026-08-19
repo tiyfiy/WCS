@@ -1,0 +1,22 @@
+{
+  "tests": 2,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "Ping",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "ReturnsPongForPing",
+          "file": "\/Users\/timimaucec\/PRO\/CPP\/WCS\/mini-wcs\/tests\/test_ping.cpp",
+          "line": 5
+        },
+        {
+          "name": "EchoesOtherMessages",
+          "file": "\/Users\/timimaucec\/PRO\/CPP\/WCS\/mini-wcs\/tests\/test_ping.cpp",
+          "line": 9
+        }
+      ]
+    }
+  ]
+}
