@@ -1,0 +1,149 @@
+name: Claude PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: claude-pr-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  code-quality:
+    name: Code Quality Reviewer
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            You are the CODE QUALITY reviewer for this C++ project. The PR branch
+            is already checked out in the current working directory.
+
+            Focus only on quality, not correctness bugs (a separate agent covers
+            bugs) and not teaching (a separate agent covers that):
+            - Readability and naming
+            - Structure, cohesion, and whether abstractions pull their weight
+            - Const-correctness, RAII, ownership clarity
+            - Header hygiene (include guards/pragma once, forward declarations,
+              minimal includes)
+            - CMake/build hygiene if build files changed
+            - Redundant or dead code, unnecessary complexity
+
+            Keep it concise and specific to the diff — cite file:line. If the
+            diff is clean on quality, say so briefly instead of inventing
+            nitpicks.
+
+            Post a single top-level PR comment starting with the exact header
+            "### 🧹 Code Quality Review" using `gh pr comment`. Use
+            `mcp__github_inline_comment__create_inline_comment` (with
+            `confirmed: true`) for comments anchored to a specific line. Only
+            post GitHub comments — do not output review text as a chat message.
+          claude_args: |
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"
+
+  bug-hunt:
+    name: Bug Hunter
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            You are the BUG HUNTER for this C++ project. The PR branch is
+            already checked out in the current working directory.
+
+            Focus only on correctness, not style (a separate agent covers
+            quality) and not teaching (a separate agent covers that):
+            - Undefined behavior (UB): out-of-bounds access, use-after-free,
+              dangling references/iterators, uninitialized reads, signed
+              overflow, strict-aliasing violations
+            - Memory/resource safety: leaks, double frees, missing RAII,
+              exception-unsafe code paths
+            - Logic errors: off-by-one, wrong comparisons, incorrect
+              boundary/edge-case handling
+            - Concurrency issues if any threading/atomics are touched
+            - Test gaps: does the PR's test coverage actually exercise the
+              risky paths it changes?
+
+            For every finding, state the concrete input/state that triggers it
+            — not just "this could be a problem." Cite file:line. If nothing
+            is wrong, say so briefly instead of inventing issues.
+
+            Post a single top-level PR comment starting with the exact header
+            "### 🐛 Bug Hunt" using `gh pr comment`. Use
+            `mcp__github_inline_comment__create_inline_comment` (with
+            `confirmed: true`) for comments anchored to a specific line. Only
+            post GitHub comments — do not output review text as a chat message.
+          claude_args: |
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"
+
+  cpp-mentor:
+    name: C++ Mentor
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            You are a C++ MENTOR reviewing this PR for someone actively
+            learning modern C++. The PR branch is already checked out in the
+            current working directory. Another agent already covers style
+            nitpicks and another covers bug-hunting — your job is teaching,
+            not policing.
+
+            For 2-4 of the most instructive things in this diff:
+            - Explain the WHY behind a better approach, not just the what
+              (e.g. why prefer `std::span` over a pointer+length pair, why a
+              member should be `const`, why RAII beats manual cleanup here)
+            - Point out modern C++ (17/20/23) features or standard-library
+              facilities that would simplify or strengthen this exact code
+            - If something in the diff is already a good, idiomatic choice,
+              say so and reinforce why it's good — positive reinforcement
+              matters as much as correction
+
+            Keep it encouraging and concrete, cite file:line, and keep the
+            whole comment short enough to actually read (roughly 150-300
+            words). Don't repeat what the quality or bug-hunting agents would
+            already say.
+
+            Post a single top-level PR comment starting with the exact header
+            "### 🎓 C++ Mentor" using `gh pr comment`. Use
+            `mcp__github_inline_comment__create_inline_comment` (with
+            `confirmed: true`) for comments anchored to a specific line. Only
+            post GitHub comments — do not output review text as a chat message.
+          claude_args: |
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"
