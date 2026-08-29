@@ -1,3 +1,0 @@
-Ping.ReturnsPongForPing 2 0.00492875
-Ping.EchoesOtherMessages 2 0.00176125
----
