@@ -1,5 +1,6 @@
 #include "wcs/ping.hpp"
 
+
 namespace wcs {
 
 std::string ping(const std::string& message) {
