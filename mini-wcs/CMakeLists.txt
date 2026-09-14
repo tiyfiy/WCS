@@ -18,7 +18,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
-add_executable(wcs_tests tests/test_ping.cpp)
+add_executable(wcs_tests tests/test_ping.cpp tests/test_ids.cpp)
 target_link_libraries(wcs_tests PRIVATE wcs_domain GTest::gtest_main)
 
 include(GoogleTest)
