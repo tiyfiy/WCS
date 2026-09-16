@@ -1,8 +1,5 @@
-#include <optional>
-#include <string>
+#pragma once
 
-struct TransportUnit {
-    UnitId id;
-    double weight_kg;
-    std::optional<LocationId> current_location;
-};
+// Preserve compatibility with the original filename while keeping one
+// definition of TransportUnit.
+#include "transport_unit.hpp"
